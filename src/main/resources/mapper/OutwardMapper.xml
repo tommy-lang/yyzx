@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.OutwardMapper">
+
+    <resultMap id="BaseResultMap" type="com.htu.yyzx.model.entity.Outward">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+            <result property="isDeleted" column="isDeleted" jdbcType="INTEGER"/>
+            <result property="customerId" column="customerId" jdbcType="INTEGER"/>
+            <result property="outgoingReason" column="outgoingReason" jdbcType="VARCHAR"/>
+            <result property="outgoingTime" column="outgoingTime" jdbcType="DATE"/>
+            <result property="expectedReturnTime" column="expectedReturnTime" jdbcType="DATE"/>
+            <result property="actualrReturnTime" column="actualrReturnTime" jdbcType="DATE"/>
+            <result property="escorted" column="escorted" jdbcType="VARCHAR"/>
+            <result property="relation" column="relation" jdbcType="VARCHAR"/>
+            <result property="escortedTel" column="escortedTel" jdbcType="VARCHAR"/>
+            <result property="auditStatus" column="auditStatus" jdbcType="INTEGER"/>
+            <result property="auditPerson" column="auditPerson" jdbcType="VARCHAR"/>
+            <result property="auditTime" column="auditTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,remarks,isDeleted,
+        customerId,outgoingReason,outgoingTime,
+        expectedReturnTime,actualrReturnTime,escorted,
+        relation,escortedTel,auditStatus,
+        auditPerson,auditTime
+    </sql>
+</mapper>

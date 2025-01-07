@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.CustomerMapper">
+
+    <resultMap id="BaseResultMap" type="com.htu.yyzx.model.entity.Customer">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="isDeleted" column="isDeleted" jdbcType="INTEGER"/>
+        <result property="customerName" column="customerName" jdbcType="VARCHAR"/>
+        <result property="customerAge" column="customerAge" jdbcType="INTEGER"/>
+        <result property="customerSex" column="customerSex" jdbcType="INTEGER"/>
+        <result property="idcard" column="idcard" jdbcType="VARCHAR"/>
+        <result property="roomNo" column="roomNo" jdbcType="VARCHAR"/>
+        <result property="buildingNo" column="buildingNo" jdbcType="VARCHAR"/>
+        <result property="checkinDate" column="checkinDate" jdbcType="DATE"/>
+        <result property="expirationDate" column="expirationDate" jdbcType="DATE"/>
+        <result property="contactTel" column="contactTel" jdbcType="VARCHAR"/>
+        <result property="bedId" column="bedId" jdbcType="INTEGER"/>
+        <result property="psychosomaticState" column="psychosomaticState" jdbcType="VARCHAR"/>
+        <result property="attention" column="attention" jdbcType="VARCHAR"/>
+        <result property="birthday" column="birthday" jdbcType="DATE"/>
+        <result property="height" column="height" jdbcType="VARCHAR"/>
+        <result property="weight" column="weight" jdbcType="VARCHAR"/>
+        <result property="bloodType" column="bloodType" jdbcType="VARCHAR"/>
+        <result property="filepath" column="filepath" jdbcType="VARCHAR"/>
+        <result property="userId" column="userId" jdbcType="INTEGER"/>
+        <result property="levelId" column="levelId" jdbcType="INTEGER"/>
+        <result property="familyMember" column="familyMember" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,isDeleted,customerName,
+        customerAge,customerSex,idcard,
+        roomNo,buildingNo,checkinDate,
+        expirationDate,contactTel,bedId,
+        psychosomaticState,attention,birthday,
+        height,weight,bloodType,
+        filepath,userId,levelId,
+        familyMember
+    </sql>
+</mapper>

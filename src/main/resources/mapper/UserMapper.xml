@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.htu.yyzx.model.entity.User">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="createTime" column="createTime" jdbcType="DATE"/>
+        <result property="createBy" column="createBy" jdbcType="INTEGER"/>
+        <result property="updateTime" column="updateTime" jdbcType="DATE"/>
+        <result property="updateBy" column="updateBy" jdbcType="INTEGER"/>
+        <result property="isDelete" column="isDeleted" jdbcType="INTEGER"/>
+        <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="INTEGER"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="phoneNumber" column="phoneNumber" jdbcType="VARCHAR"/>
+        <result property="roleId" column="roleId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,createTime,createBy,
+        updateTime,updateBy,isDeleted,
+        nickname,username,password,
+        sex,email,phoneNumber,
+        roleId
+    </sql>
+</mapper>

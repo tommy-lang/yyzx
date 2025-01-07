@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.CustomerPreferenceMapper">
+
+    <resultMap id="CustomerPreference" type="CustomerPreference">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="customerId" column="customerId" jdbcType="INTEGER"/>
+        <result property="preferences" column="preferences" jdbcType="VARCHAR"/>
+        <result property="attention" column="attention" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <association property="customer" javaType="Customer">
+            <result property="customerName" column="customerName" jdbcType="VARCHAR"/>
+            <result property="customerAge" column="customerAge"/>
+            <result property="customerSex" column="customerSex"/>
+        </association>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,customerId,preferences,
+        attention,remark,isDeleted
+    </sql>
+<!--    cast(cp.id,cp.customerId,cp.preferences,cp.attention,cp.remark,-->
+<!--    c as CASE )-->
+    <select id="findByCustomerPreferencePage" resultMap="CustomerPreference">
+        select
+        cp.id,cp.customerId,cp.preferences,cp.attention,cp.remark,
+        c.customerName,c.customerAge,c.customerSex
+        from
+            customer_preference cp
+            INNER JOIN
+                customer c
+            ON cp.customerId = c.id
+        <where>
+            <if test="customerName != null">
+                c.customerName like concat('%',#{customerName},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

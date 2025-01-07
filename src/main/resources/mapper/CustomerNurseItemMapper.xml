@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.CustomerNurseItemMapper">
+
+    <resultMap id="BaseResultMap" type="com.htu.yyzx.model.entity.CustomerNurseItem">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="itemId" column="itemId" jdbcType="INTEGER"/>
+            <result property="customerId" column="customerId" jdbcType="INTEGER"/>
+            <result property="levelId" column="levelId" jdbcType="INTEGER"/>
+            <result property="nurseNumber" column="nurseNumber" jdbcType="INTEGER"/>
+            <result property="isDeleted" column="isDeleted" jdbcType="INTEGER"/>
+            <result property="buyTime" column="buyTime" jdbcType="DATE"/>
+            <result property="maturityTime" column="maturityTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,itemId,customerId,
+        levelId,nurseNumber,isDeleted,
+        buyTime,maturityTime
+    </sql>
+</mapper>

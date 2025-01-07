@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htu.yyzx.mapper.RoleMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.htu.yyzx.model.entity.RoleMenu">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="roleId" column="roleId" jdbcType="INTEGER"/>
+        <result property="menuId" column="menuId" jdbcType="INTEGER"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="createBy" column="createBy" jdbcType="INTEGER"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="updateBy" jdbcType="INTEGER"/>
+        <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,roleId,menuId,
+        createTime,createBy,updateTime,
+        updateBy,isDelete
+    </sql>
+
+    <select id="queryMenuIdsByRoleId" resultType="java.lang.Integer">
+        SELECT menuId
+        FROM role_menu
+        WHERE roleId = #{roleId}
+          AND isDelete = 0
+    </select>
+</mapper>
